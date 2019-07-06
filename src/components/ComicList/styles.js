@@ -15,9 +15,10 @@ export const Comic = styled.div`
   flex-direction: column;
 
   width: 300px;
-  background: #fff;
+  background: #0009;
   border-radius: 3px;
   margin: 10px 10px;
+  color: #fff;
 
   header {
     display: flex;
@@ -57,11 +58,12 @@ export const Comic = styled.div`
     li {
       padding: 7px 4px 3px 4px;
       font-size: 12px;
+      color: #fff;
 
       small {
         font-weight: normal;
         font-size: 10px;
-        color: #999;
+        color: #fff;
         font-style: italic;
       }
     }

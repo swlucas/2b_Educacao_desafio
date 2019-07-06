@@ -9,8 +9,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 body{
-  background-color: firebrick;
-  text-rendering: optimizeLegibility !important;
+  background: rgb(33, 2, 2);
   -webkit-font-smoothing: antialiased !important;
 }
 `;

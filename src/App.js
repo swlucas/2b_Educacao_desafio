@@ -3,12 +3,12 @@ import Global from './styles/global';
 
 import Routes from './routes';
 
-function App(){
-  return(
+function App() {
+  return (
     <Fragment>
       <Global />
-      <Routes/>
+      <Routes />
     </Fragment>
-  )
-};
+  );
+}
 export default App;

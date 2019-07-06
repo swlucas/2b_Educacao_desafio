@@ -23,25 +23,24 @@ export const Form = styled.form`
     color: #444;
     text-align: center;
   }
-  
 `;
 
-export const SubmitButton = styled.button.attrs(props=>({
-  type:'submit',
-  disabled:props.loading
+export const SubmitButton = styled.button.attrs(props => ({
+  type: 'submit',
+  disabled: props.loading,
 }))`
-    height: 55px;
-    padding: 0 20px;
-    margin-left: 10px;
-    background: #63f5b0;
-    color: #fff;
-    border: 0;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 3px;
-    
-    &[disabled]{
-      cursor:not-allowed;
-      opacity: 0.5;
-    }
+  height: 55px;
+  padding: 0 20px;
+  margin-left: 10px;
+  background: #bf0c0c;
+  color: #fff;
+  border: 0;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 3px;
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 `;

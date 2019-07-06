@@ -14,7 +14,7 @@ const ComicList = ({ comics, loading }) => (
         <Comic>
           <Link
             to={`/comic/${comic.id}`}
-            style={{ textDecoration: 'none', color: 'black' }}
+            style={{ textDecoration: 'none', color: '#FFF' }}
             params={comic}
           >
             <header>

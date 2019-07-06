@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import md5 from 'crypto-js/md5';
 import api from '../../services/api';
 
+import ComicDatail from '../../components/ComicDetail';
+
 export default class Comic extends Component {
+  state = {
+    comic: '',
+  };
+
   async componentDidMount() {
     const { match } = this.props;
-    console.log(match);
     const { id } = match.params;
     this.handleLoadComics(id);
   }
@@ -21,13 +26,16 @@ export default class Comic extends Component {
       const response = await api.get(
         `comics/${id}?ts=${timestamp}&limit=${limit}&apikey=${PUBLIC_KEY}&hash=${hash}`,
       );
-      console.log(response);
+      this.setState({
+        comic: response.data.data.results[0],
+      });
     } catch (e) {
       console.log(e);
     }
   };
 
   render() {
-    return <h1>oi</h1>;
+    const { comic } = this.state;
+    return <ComicDatail comic={comic} />;
   }
 }
