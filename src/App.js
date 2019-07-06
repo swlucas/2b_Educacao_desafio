@@ -1,12 +1,14 @@
 import React, { Fragment } from 'react';
 import Global from './styles/global';
 
-import Main from './pages/Main';
+import Routes from './routes';
 
-const App = () => (
-  <Fragment>
-    <Global />
-    <Main />
-  </Fragment>
-);
+function App(){
+  return(
+    <Fragment>
+      <Global />
+      <Routes/>
+    </Fragment>
+  )
+};
 export default App;

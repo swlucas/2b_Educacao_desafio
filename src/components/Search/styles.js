@@ -23,7 +23,13 @@ export const Form = styled.form`
     color: #444;
     text-align: center;
   }
-  button {
+  
+`;
+
+export const SubmitButton = styled.button.attrs(props=>({
+  type:'submit',
+  disabled:props.loading
+}))`
     height: 55px;
     padding: 0 20px;
     margin-left: 10px;
@@ -33,9 +39,9 @@ export const Form = styled.form`
     font-size: 20px;
     font-weight: bold;
     border-radius: 3px;
-
-    &:hover {
-      background: #52d89f;
+    
+    &[disabled]{
+      cursor:not-allowed;
+      opacity: 0.5;
     }
-  }
 `;

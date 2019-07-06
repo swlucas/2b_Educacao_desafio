@@ -1,27 +1,39 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+import { FaSpinner } from 'react-icons/fa';
 
 import { Container, Comic } from './styles';
 
-// eslint-disable-next-line react/prop-types
-const ComicList = ({ comics }) => (
+const ComicList = ({ comics, loading }) => (
   <Container>
-    {comics.map(comic => (
-      <Comic>
-        <header>
-          <img src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} alt="" />
-          <strong>{comic.title}</strong>
-          {/* <small>{comic.description}</small> */}
-        </header>
+    {loading ? (
+      <FaSpinner color="#FFF" />
+    ) : (
+      comics.map(comic => (
+        <Comic>
+          <Link
+            to={`/comic/${comic.id}`}
+            style={{ textDecoration: 'none', color: 'black' }}
+            params={comic}
+          >
+            <header>
+              <img src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} alt="" />
+              <strong>{comic.title}</strong>
+              {/* <small>{comic.description}</small> */}
+            </header>
 
-        <ul>
-          {comic.creators.items.map(creator => (
-            <li>
-              {creator.role} <small>{creator.name}</small>
-            </li>
-          ))}
-        </ul>
-      </Comic>
-    ))}
+            <ul>
+              {comic.creators.items.map(creator => (
+                <li>
+                  {creator.role} <small>{creator.name}</small>
+                </li>
+              ))}
+            </ul>
+          </Link>
+        </Comic>
+      ))
+    )}
   </Container>
 );
 

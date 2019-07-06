@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
-import { Container, Form } from './styles';
+import { FaSearch, FaSpinner } from 'react-icons/fa'
+
+import { Container, Form, SubmitButton } from './styles';
 
 export default class Search extends Component {
   state = {
@@ -17,16 +19,21 @@ export default class Search extends Component {
   };
 
   render() {
+    const { searchInput } = this.state;
+    const { loading } = this.props;
+
     return (
       <Container>
         <Form onSubmit={this.handleSubmit}>
           <input
             type="text"
             placeholder="Personagem"
-            value={this.state.searchInput}
+            value={searchInput}
             onChange={this.handleChange}
           />
-          <button type="submit">ok</button>
+          <SubmitButton loading={loading}>
+             <FaSearch/>
+          </SubmitButton>
         </Form>
       </Container>
     );

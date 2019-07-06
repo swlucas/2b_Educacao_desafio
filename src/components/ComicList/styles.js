@@ -27,12 +27,14 @@ export const Comic = styled.div`
 
     img {
       width: 300px;
+      height: 465px;
       padding: 5px;
     }
 
     strong {
       font-size: 24px;
       margin-top: 10px;
+      text-decoration: none;
     }
 
     /* small {
